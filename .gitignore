@@ -1,0 +1,13 @@
+# Packs
+.DS_Store
+node_modules
+
+# Build
+dist
+
+# Database
+generated
+
+# Environment
+.env
+.dockerignore
