@@ -1,6 +1,6 @@
 export class AppHandleError extends Error {
-  public readonly _statusCode: number;
-  public readonly _code: string;
+  private readonly _statusCode: number;
+  private readonly _code: string;
 
   constructor(
     message = "Application error.",

@@ -8,13 +8,22 @@ datasource db {
 }
 
 model Product {
-  id          String   @id @default(uuid())
-  title       String   @unique
-  description String
-  value       Decimal  @db.Decimal(10, 2)
-  stock       Int
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
+  id                String   @id @default(uuid())
+  externalId        String   @map("external_id")
+  title             String
+  imgUrl            String   @map("img_url")
+  productURL        String   @map("product_url")
+  stars             String
+  reviews           String
+  price             Decimal  @default(0.00) @db.Decimal(12, 2)
+  listPrice         Decimal  @default(0.00) @map("list_price") @db.Decimal(12, 2)
+  categoryName      String   @map("category_name")
+  isBestSeller      Boolean  @map("is_best_seller")
+  boughtInLastMonth Int      @map("bought_in_last_month")
+  mimetype          String
+  filename          String
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
 
   @@index([createdAt])
   @@map("products")

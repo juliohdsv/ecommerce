@@ -1,0 +1,6 @@
+@baseUrl = http://localhost:4000/api
+
+###
+
+GET {{baseUrl}}/v1/files/upload
+Content-Type: application/json
